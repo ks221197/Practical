@@ -1,0 +1,336 @@
+{
+	"info": {
+		"_postman_id": "d4a00d25-ff9b-4729-bb66-d92a082174fb",
+		"name": "task171122",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users/signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"Kajal\",\n  \"lastName\": \"Singh\",\n  \"email\": \"kajalsingh@gmail.com\",\n  \"password\": \"kajal123\"\n}"
+				},
+				"url": {
+					"raw": "http://[::1]:3000/users/signup",
+					"protocol": "http",
+					"host": [
+						"[::1]"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/login",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"kajalsingh@gmail.com\",\n  \"password\": \"kajal123\"\n}"
+				},
+				"url": {
+					"raw": "http://[::1]:3000/users/login",
+					"protocol": "http",
+					"host": [
+						"[::1]"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/me [middleware]",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthamFsc2luZ2hAZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE2Njc5MDE2NTQsImV4cCI6MTY2NzkwMTcxNH0.llsQmnckUh3Mm3l3WY0YmDfghNtAPGesTWHbw38h2Y4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://[::1]:3000/users/me",
+					"protocol": "http",
+					"host": [
+						"[::1]"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/1 [guard]",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthamFsc2luZ2hAZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE2Njc5MDE2NTQsImV4cCI6MTY2NzkwMTcxNH0.llsQmnckUh3Mm3l3WY0YmDfghNtAPGesTWHbw38h2Y4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://[::1]:3000/users/1",
+					"protocol": "http",
+					"host": [
+						"[::1]"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/games",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Splice\",\n  \"platform\": \"iPad\",\n  \"score\": 0,\n  \"genre\": \"Puzzle\",\n  \"editors_choice\": 'Y'\n}"
+				},
+				"url": {
+					"raw": "http://[::1]:3000/games",
+					"protocol": "http",
+					"host": [
+						"[::1]"
+					],
+					"port": "3000",
+					"path": [
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/games/100",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthamFsc2luZ2hAZ21haWwuY29tIiwidXNlcklkIjoiMSIsImlhdCI6MTY2ODY3MjY0OCwiZXhwIjoxNjY4NjcyNzA4fQ.TKZ2Nvfmc55OjTTH46DQQzdB3Yveq67pTiAn2U4vz1o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Splice\",\n  \"platform\": \"Android\",\n  \"score\": 0,\n  \"genre\": \"Puzzle\",\n  \"editors_choice\": \"Y\"\n}"
+				},
+				"url": {
+					"raw": "http://[::1]:3000/games/100",
+					"protocol": "http",
+					"host": [
+						"[::1]"
+					],
+					"port": "3000",
+					"path": [
+						"games",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "games/101",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthamFsc2luZ2hAZ21haWwuY29tIiwidXNlcklkIjoiMSIsImlhdCI6MTY2ODY3MjcyNSwiZXhwIjoxNjY4NjcyNzg1fQ.EeGOaDKv_-hKSEp9-nXP0iUphmImmp35VdZCz5_PT4Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://[::1]:3000/games/101",
+					"protocol": "http",
+					"host": [
+						"[::1]"
+					],
+					"port": "3000",
+					"path": [
+						"games",
+						"101"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "games/search",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthamFsc2luZ2hAZ21haWwuY29tIiwidXNlcklkIjoiMSIsImlhdCI6MTY2ODY3Mjc4NCwiZXhwIjoxNjY4NjcyODQ0fQ.Bt_1BafYkE0tmvlM_gT3oPvrIOu_hOktlBZ2Uq_1fYQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"genre\": \"puzzle\",\n  \"order\": \"ASC\"\n}"
+				},
+				"url": {
+					"raw": "http://[::1]:3000/games/search",
+					"protocol": "http",
+					"host": [
+						"[::1]"
+					],
+					"port": "3000",
+					"path": [
+						"games",
+						"search"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
